@@ -11,16 +11,17 @@ namespace WhatDoYouOwn_ASPNET
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            var app = builder.Build();
 
             // Configuração do banco de dados MySQL.
-            builder.Services.AddDbContext<MyDbContext>(options => 
+            builder.Services.AddDbContext<MyDbContext>(options =>
             {
                 options.UseMySql(
                     builder.Configuration.GetConnectionString("Database"),
                     new MySqlServerVersion(new Version(8, 0, 21))
                     );
             });
+
+            var app = builder.Build();
 
             // Injeção de depedência.
             //builder.Services.AddScoped<interface, implementação>();

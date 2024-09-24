@@ -4,7 +4,7 @@ namespace WhatDoYouOwn_ASPNET
 {
     public class MyDbContext : DbContext
     {
-        MyDbContext(DbContextOptions<MyDbContext> options) : base (options) 
+        public MyDbContext(DbContextOptions<MyDbContext> options) : base (options)
         {
         }
 
