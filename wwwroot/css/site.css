@@ -11,6 +11,7 @@
     --primary: #0C7A9B;
     --secondary: #C9E9D7;
     --tertiary: #67AAB0;
+    --neutron: #c1d1dc;
 }
 
 html,
@@ -80,4 +81,48 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #5d3d17a7;
+}
+
+/*Formulário cadastro*/
+
+.singup-page {
+    background-color: var(--neutron);
+}
+
+.form-positon {
+    display: flex;
+    justify-content: center;
+    align-itens: center;
+}
+
+#form-itens {
+    background-color: var(--primary);
+    color: var(--secondary);
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-itens: center;
+    margin: 5% 35% 5% 35%;
+    padding: 5%;
+    border: 1px solid black;
+    border-radius: 8%;
+}
+
+.content-form {
+    margin-bottom: 10%;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid var(--primary);
+}
+
+#input-button {
+    margin-top:5%;
+    padding:4% 0% 4% 0%;
+    border-radius: 15px;
+    border: 1px solid var(--primary);
+    cursor: pointer;
+}
+
+#input-button:hover {
+    background-color: #BDBDBD;
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using WhatDoYouOwn_ASPNET.Models;
 
 namespace WhatDoYouOwn_ASPNET
 {
@@ -8,6 +9,6 @@ namespace WhatDoYouOwn_ASPNET
         {
         }
 
-        //public DbSet<classeModelo> nome { get; set; }
+        public DbSet<UserModel> Usuario { get; set; }
     }
 }

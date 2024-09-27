@@ -1,0 +1,29 @@
+﻿@using WhatDoYouOwn_ASPNET.Models
+@model UserModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <title>WDYO - Cadastro</title>
+</head>
+<body class="singup-page">
+    <main class="form-position">
+        <form id="form-itens" method="post" asp-controller="SingUp" asp-action="Register">
+            <label>Nome</label>
+            <input class="content-form" type="text" placeholder="Informe seu nome." required asp-for="Nome" />
+
+            <label>Sobrenome</label>
+            <input class="content-form" type="text" placeholder="Informe seu sobrenome." required asp-for="Sobrenome" />
+
+            <label>Email</label>
+            <input class="content-form" type="email" placeholder="Informe seu email." required asp-for="Email" />
+
+            <label>Senha</label>
+            <input class="content-form" type="password" placeholder="Informe uma senha." required asp-for="Senha" />
+
+            <button id="input-button" type="submit">Cadastrar</button>
+        </form>
+    </main>
+</body>
+</html>
