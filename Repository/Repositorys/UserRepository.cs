@@ -24,9 +24,19 @@ namespace WhatDoYouOwn_ASPNET.Repository.Repositorys
             throw new NotImplementedException();
         }
 
-        public UserModel SearchByEmailAndPassword(string email, string password)
+        public bool SearchByEmailAndPassword(string email, string password)
         {
-            throw new NotImplementedException();
+            UserModel? searchedUser = _dbContext.Usuario.FirstOrDefault(x => x.Email == email && x.Senha == password);
+            if (searchedUser == null)
+            {
+                bool userFind = false;
+                return userFind;
+            }
+            else
+            {
+                bool userFind = true;
+                return userFind;
+            }
         }
         public UserModel SearchById(int id)
         {

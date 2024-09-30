@@ -6,11 +6,11 @@
 <head>
     <link href="~/css/site.css" rel="stylesheet" />
     <link href="~/images/WD.png" rel="icon" />
-    <title>WDYO - Cadastro</title>
+    <title>WDYO - Login</title>
 </head>
-<body class="singup-page">
+<body class="singin-page">
     <main class="form-position">
-        <form id="form-itens" method="post" asp-controller="SingUp" asp-action="Register">
+        <form id="form-itens" method="get" asp-controller="SingIn" asp-action="EnterAccount">
             <label>Nome</label>
             <input class="content-form" type="text" placeholder="Informe seu nome." required asp-for="Nome" />
 
@@ -21,9 +21,13 @@
             <input class="content-form" type="email" placeholder="Informe seu email." required asp-for="Email" />
 
             <label>Senha</label>
-            <input class="content-form" type="password" placeholder="Informe uma senha." maxlenth="15" required asp-for="Senha" />
+            <input class="content-form" type="password" placeholder="Informe uma senha." maxlength="25" required asp-for="Senha" />
 
-            <button id="input-button" type="submit">Cadastrar</button>
+            <button id="input-button" type="submit">Entrar</button>
+
+            @{
+                <span style="padding-top: 10%; text-align: center; color:#990000;">@TempData["ErrorMensage"]</span>
+            }
         </form>
     </main>
 </body>

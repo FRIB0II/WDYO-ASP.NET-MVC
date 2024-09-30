@@ -83,7 +83,11 @@ nav ul li a:hover {
     color: #5d3d17a7;
 }
 
-/*Formulário cadastro*/
+/*Formulário de cadastro e login*/
+
+.singup-page {
+    background-color: var(--neutron);
+}
 
 .singup-page {
     background-color: var(--neutron);
@@ -92,7 +96,7 @@ nav ul li a:hover {
 .form-positon {
     display: flex;
     justify-content: center;
-    align-itens: center;
+    align-items: center;
 }
 
 #form-itens {
@@ -101,7 +105,7 @@ nav ul li a:hover {
     display: flex;
     flex-direction:column;
     justify-content: center;
-    align-itens: center;
+    align-items: center;
     margin: 5% 35% 5% 35%;
     padding: 5%;
     border: 1px solid black;
@@ -126,3 +130,5 @@ nav ul li a:hover {
 #input-button:hover {
     background-color: #BDBDBD;
 }
+
+/*Erro na tela de loing*/
