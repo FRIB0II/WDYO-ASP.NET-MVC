@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using WhatDoYouOwn_ASPNET.Repository.Interfaces;
+using WhatDoYouOwn_ASPNET.Repository.Repositorys;
 
 namespace WhatDoYouOwn_ASPNET
 {
@@ -11,20 +13,18 @@ namespace WhatDoYouOwn_ASPNET
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-
             // Configuração do banco de dados MySQL.
             builder.Services.AddDbContext<MyDbContext>(options =>
             {
-                options.UseMySql(
-                    builder.Configuration.GetConnectionString("Database"),
-                    new MySqlServerVersion(new Version(8, 0, 21))
-                    );
+                options.UseSqlServer(
+                    builder.Configuration.GetConnectionString("Database")
+                );
             });
 
-            var app = builder.Build();
-
             // Injeção de depedência.
-            //builder.Services.AddScoped<interface, implementação>();
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+            var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
@@ -43,7 +43,7 @@ namespace WhatDoYouOwn_ASPNET
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Home}/{action=Index}");
 
             app.Run();
         }
