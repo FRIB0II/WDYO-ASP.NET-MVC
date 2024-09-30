@@ -35,12 +35,6 @@ header {
     height: 150px;
 }
 
-.open-menu{
-    background: var(--primary);
-    border: none;
-    cursor: pointer;
-}
-
 nav {
     width: 100%;
     height: 125px;
@@ -50,68 +44,123 @@ nav {
     justify-content: space-between;
 }
 
-nav ul {
-    margin-top: 50px;
+    nav ul {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: row;
+    }
+
+        nav ul button {
+            border: 1px solid var(--tertiary);
+            background: transparent;
+            padding: 8px 40px;
+            cursor: pointer;
+            margin-left: 30px;
+            color: var(--tertiary);
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+            nav ul button:hover {
+                background-color: var(--primary);
+                color: white;
+                transition: 0.3s;
+            }
+
+        nav ul li {
+            list-style: none;
+            font-size: 18px;
+        }
+
+            nav ul li a {
+                padding: 10px;
+                cursor: pointer;
+                color: var(--brown);
+                font-weight: bold;
+            }
+
+                nav ul li a:hover {
+                    color: #5d3d17a7;
+                }
+
+/*Formulário de cadastro e login*/
+
+.singup-page {
+    background-color: var(--neutron);
+}
+
+.singup-page {
+    background-color: var(--neutron);
+}
+
+.form-positon {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
-nav ul button {
-    border: 1px solid var(--tertiary);
-    background: transparent;
-    padding: 8px 40px;
-    cursor: pointer;
-    margin-left: 30px;
-    color: var(--tertiary);
-    font-weight: bold;
-    border-radius: 4px;
-}
-
-nav ul button:hover {
+#form-itens {
     background-color: var(--primary);
-    color: white;
-    transition: 0.3s;
+    color: var(--secondary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5% 35% 5% 35%;
+    padding: 5%;
+    border: 1px solid black;
+    border-radius: 8%;
 }
 
-nav ul li {
-    list-style: none;
-    font-size: 18px;
-}
-
-nav ul li a {
+.content-form {
+    margin-bottom: 10%;
     padding: 10px;
-    cursor: pointer;
-    color: var(--brown);
-    font-weight: bold;
+    border-radius: 15px;
+    border: 1px solid var(--primary);
 }
 
-nav ul li a:hover {
-    color: #5d3d17a7;
+#input-button {
+    margin-top: 5%;
+    padding: 4% 0% 4% 0%;
+    border-radius: 15px;
+    border: 1px solid var(--primary);
+    cursor: pointer;
+}
+
+    #input-button:hover {
+        background-color: #BDBDBD;
+    }
+
+.open-menu {
+    background: var(--primary);
+    border: none;
+    cursor: pointer;
 }
 
 /*Menu*/
 
 .sidebar {
-    background: var(--primary)
+    background: var(--secondary);
     height: 100%;
     width: 20%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     position: fixed;
     top: 0;
-    left: -250px;
+    left: -1000px;
     z-index: 999;
-    transition: 0.3s;
+    transition: 0.5s;
+    align-content: start;
+    padding: 15px;
 }
 
-.sidebar.open{
-    left: 0;
-}
+    .sidebar.open {
+        left: 0;
+    }
 
-.sidebar.shift {
-    margin-left: 250px;
-}
+    .sidebar.shift {
+        margin-left: 250px;
+    }
 
 .link-wrapper li {
     display: flex;
@@ -127,20 +176,20 @@ nav ul li a:hover {
     margin: 10px;
 }
 
-.menu-item a {
-    padding: 10px;
-    cursor: pointer;
-    color: var(--primary);
-    font-weight: bold;
-    font-size: 1.2em;
-}
+    .menu-item a {
+        padding: 10px;
+        cursor: pointer;
+        color: var(--primary);
+        font-weight: bold;
+        font-size: 1.2em;
+    }
 
-.menu-item a:hover {
-    color: var(--secondary);
-    transition: 0.2s;
-}
+        .menu-item a:hover {
+            color: var(--tertiary);
+            transition: 0.2s;
+        }
 
-.close-btn{
+.close-btn {
     background: transparent;
     border: 0;
 }
