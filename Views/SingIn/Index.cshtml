@@ -26,8 +26,10 @@
             <button id="input-button" type="submit">Entrar</button>
 
             @{
-                <span style="padding-top: 10%; text-align: center; color:#990000;">@TempData["ErrorMensage"]</span>
+                <span style="padding: 3% 0% 3% 0%; text-align: center; color:#990000;">@TempData["ErrorMensage"]</span>
             }
+
+            <span>Não tem uma conta? Acesse a página de cadastro <a asp-controller="SingUp" asp-action="Index">aqui</a>.</span>
         </form>
     </main>
 </body>

@@ -89,7 +89,7 @@ nav {
     background-color: var(--neutron);
 }
 
-.singup-page {
+.singin-page {
     background-color: var(--neutron);
 }
 
@@ -104,12 +104,21 @@ nav {
     color: var(--secondary);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     margin: 5% 35% 5% 35%;
-    padding: 5%;
+    padding: 3% 5% 2% 5%;
     border: 1px solid black;
-    border-radius: 8%;
+    border-radius: 12px;
+}
+
+#form-itens span {
+    margin-top: 12px;
+}
+
+#form-itens span a {
+    color: black;
+    text-decoration: none;
 }
 
 .content-form {
@@ -117,6 +126,7 @@ nav {
     padding: 10px;
     border-radius: 15px;
     border: 1px solid var(--primary);
+    width: 100%;
 }
 
 #input-button {
@@ -125,6 +135,7 @@ nav {
     border-radius: 15px;
     border: 1px solid var(--primary);
     cursor: pointer;
+    width: 100%;
 }
 
     #input-button:hover {
