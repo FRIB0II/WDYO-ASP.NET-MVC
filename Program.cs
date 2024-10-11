@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using WhatDoYouOwn_ASPNET.Helper;
 using WhatDoYouOwn_ASPNET.Repository.Interfaces;
 using WhatDoYouOwn_ASPNET.Repository.Repositorys;
 
@@ -23,6 +24,13 @@ namespace WhatDoYouOwn_ASPNET
 
             // Injeção de depedência.
             builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IUserSession, UserSession>();
+            builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            builder.Services.AddSession(o =>
+            {
+                o.Cookie.HttpOnly = true;
+                o.Cookie.IsEssential = true;
+            });
 
             var app = builder.Build();
 
@@ -40,6 +48,8 @@ namespace WhatDoYouOwn_ASPNET
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.MapControllerRoute(
                 name: "default",
