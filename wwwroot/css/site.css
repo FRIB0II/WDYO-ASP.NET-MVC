@@ -200,7 +200,7 @@ nav {
             transition: 0.2s;
         }
 
-.close-btn {
+#close-btn {
     background: transparent;
     border: 0;
 }
