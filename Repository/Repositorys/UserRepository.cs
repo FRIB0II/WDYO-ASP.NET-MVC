@@ -38,18 +38,16 @@ namespace WhatDoYouOwn_ASPNET.Repository.Repositorys
             }
         }
 
-        public bool SearchByEmailAndPassword(string email, string password)
+        public UserModel SearchByEmailAndPassword(string email, string password)
         {
             UserModel? searchedUser = _dbContext.Usuario.FirstOrDefault(x => x.Email == email && x.Senha == password);
             if (searchedUser == null)
             {
-                bool userFind = false;
-                return userFind;
+                return null;
             }
             else
             {
-                bool userFind = true;
-                return userFind;
+                return searchedUser;
             }
         }
         public UserModel SearchById(int id)

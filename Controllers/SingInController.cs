@@ -30,15 +30,15 @@ namespace WhatDoYouOwn_ASPNET.Controllers
 
         public IActionResult EnterAccount(UserModel user)
         {
-            bool SearcheUser = _userRepository.SearchByEmailAndPassword(user.Email, user.Senha);
-            if (SearcheUser == false)
+            UserModel SearchedUser = _userRepository.SearchByEmailAndPassword(user.Email, user.Senha);
+            if (SearchedUser == null)
             {
                 TempData["ErrorMensage"] = "Usuário não encontrado!";
                 return RedirectToAction("Index");
             }
             else
             {
-                _userSession.CreateUserSession(user);
+                _userSession.CreateUserSession(SearchedUser);
                 return Redirect("/");
             }
         }

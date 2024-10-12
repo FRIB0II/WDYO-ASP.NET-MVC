@@ -8,7 +8,7 @@ namespace WhatDoYouOwn_ASPNET.Repository.Interfaces
         UserModel NewUser(UserModel user);
         UserModel EditUser(UserModel user);
         UserModel SearchById(int id);
-        bool SearchByEmailAndPassword(string email, string password);
+        UserModel SearchByEmailAndPassword(string email, string password);
         bool DeleteUser(int id);
     }
 }
