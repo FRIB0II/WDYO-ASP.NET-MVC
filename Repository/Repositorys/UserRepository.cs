@@ -21,7 +21,21 @@ namespace WhatDoYouOwn_ASPNET.Repository.Repositorys
 
         public UserModel EditUser(UserModel user)
         {
-            throw new NotImplementedException();
+            UserModel? userSearched = _dbContext.Usuario.FirstOrDefault(x => x.IdUsuario == user.IdUsuario);
+
+            if (userSearched == null)
+            {
+                throw new Exception("User not found");
+            }
+            else
+            {
+                userSearched.Nome = user.Nome;
+                userSearched.Sobrenome = user.Sobrenome;
+                userSearched.Email = user.Email;
+                userSearched.Senha = user.Senha;
+                _dbContext.SaveChanges();
+                return user;
+            }
         }
 
         public bool SearchByEmailAndPassword(string email, string password)
@@ -40,12 +54,32 @@ namespace WhatDoYouOwn_ASPNET.Repository.Repositorys
         }
         public UserModel SearchById(int id)
         {
-            throw new NotImplementedException();
+            UserModel? userSearched = _dbContext.Usuario.FirstOrDefault(x => x.IdUsuario == id);
+
+            if(userSearched == null)
+            {
+                throw new Exception("User not found");
+            }
+            else
+            {
+                return userSearched;
+            }
         }
 
         public bool DeleteUser(int id)
         {
-            throw new NotImplementedException();
+            UserModel? userSearched = _dbContext.Usuario.FirstOrDefault(x => x.IdUsuario == id);
+
+            if (userSearched == null)
+            {
+                return false;
+            }
+            else
+            {   
+                _dbContext.Remove(userSearched);
+                _dbContext.SaveChanges();
+                return true;
+            }
         }
     }
 }
