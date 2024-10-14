@@ -2,9 +2,12 @@
 using WhatDoYouOwn_ASPNET.Helper;
 using WhatDoYouOwn_ASPNET.Models;
 using WhatDoYouOwn_ASPNET.Repository.Interfaces;
+using WhatDoYouOwn_ASPNET.Filters;
+    //0800 021 6304
 
 namespace WhatDoYouOwn_ASPNET.Controllers
 {
+    [LoggedUserPages]
     public class AccountController : Controller
     {
         private readonly IUserSession _userSession;
