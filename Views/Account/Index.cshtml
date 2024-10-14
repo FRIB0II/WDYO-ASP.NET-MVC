@@ -6,8 +6,17 @@
 }
 
 <div class="content">
+
     <div class="account-info">
         <div class="info-title"><h1>Informações da conta</h1></div>
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="success-response">
+                <p>@TempData["SuccessMessage"]</p>
+            </div>
+        }
+
         <div class="info">
             <h3 class="info-title">Nome</h3>
             <p class="info-value">@Model.Nome</p>
@@ -20,6 +29,9 @@
             <h3 class="info-title">Email</h3>
             <p class="info-value">@Model.Email</p>
         </div>
+
+        <a type="button" asp-controller="Account" asp-action="Edit" asp-route-id="@Model.IdUsuario">Editar Informações</a>
+        <a type="button" asp-controller="Account" asp-action="DeleteConfirm" asp-route-id="@Model.IdUsuario" style="color: red; font-weight: bold;">Apagar conta</a>
     </div>
 </div>
 

@@ -1,0 +1,31 @@
+﻿@using WhatDoYouOwn_ASPNET.Models
+@model UserModel
+@{
+    Layout = "_AccountPageLayout";
+}
+
+<div class="content">
+    <div class="account-info">
+        <div class="info-title"><h1>Editar informações da conta</h1></div>
+        <form asp-controller="Account" asp-action="Edit" method="post" class="form-itens">
+            <div class="info">
+                <h3 class="info-title">Nome</h3>
+                <input type="text" value="@Model.Nome" asp-for="Nome" />
+            </div>
+            <div class="info">
+                <h3 class="info-title">Sobrenome</h3>
+                <input type="text" value="@Model.Sobrenome" asp-for="Sobrenome" />
+            </div>
+            <div class="info">
+                <h3 class="info-title">Email</h3>
+                <input type="email" value="@Model.Email" asp-for="Email"/>
+            </div>
+
+            <input type="hidden" asp-for="IdUsuario" />
+            <input type="hidden" asp-for="Senha" />
+
+            <button type="submit" class="a-btn">Salvar</button>
+        </form>
+
+    </div>
+</div>

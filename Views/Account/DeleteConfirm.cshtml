@@ -1,0 +1,18 @@
+﻿@using WhatDoYouOwn_ASPNET.Models
+@model UserModel
+@{
+    Layout = "_AccountPageLayout";
+    ViewData["Ttiel"] = "- Apagar conta";
+}
+
+<div class="content">
+    <div class="warn-delete">
+        <h1>Deseja mesmo apagaar sua conta?</h1>
+        <h2>Essa ação não pode ser desfeita e todos os seus dados serão perdidos!</h2>
+    </div>
+
+    <div class="content">
+        <a class="a-btn" asp-controller="Account" asp-action="Index">Voltar</a>
+        <a class="a-warn-btn" asp-controller="Account" asp-action="Delete" asp-route-id="@Model.IdUsuario">Apagar conta</a>
+    </div>
+</div>

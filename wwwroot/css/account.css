@@ -12,6 +12,7 @@
     --secondary: #C9E9D7;
     --tertiary: #67AAB0;
     --neutron: #c1d1dc;
+    --error: #d91616;
 }
 
 html,
@@ -33,14 +34,14 @@ header {
     background: var(--primary);
     width: 100%;
     height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .title{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    align-content: center;
 }
 
 .info{
@@ -62,7 +63,7 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 nav ul {
@@ -104,3 +105,104 @@ nav ul li a:hover {
     font-weight: bold;
 }
 
+.form-itens {
+    color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 3% 5% 2% 5%;
+}
+
+.form-itens input{
+    border-radius: 8px;
+    border: 0.5px solid;
+    padding: 10px;
+}
+
+.form-itens .info{
+    margin: 10px;
+}
+
+.form-positon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-itens button{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: var(--primary);
+    color: var(--secondary);
+    font-size: 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.form-itens button:hover {
+    background: var(--secondary);
+    color: var(--primary);
+    transition: 0.3s;
+}
+
+.success-response {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #0e3801;
+    border-radius: 8px;
+    background: rgba(142, 242, 156, 0.5);
+}
+
+    .success-response p {
+        color: #0e3801;
+        font-size: 1.1em;
+    }
+
+.a-warn-btn {
+    background: #d91616;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.a-warn-btn:hover {
+    background: white;
+    color: #d91616;
+    border: 1px solid #d91616;
+    transition: 0.3s;
+}
+
+.a-btn {
+    background: var(--primary);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.a-btn:hover{
+    background: var(--secondary);
+    transition: 0.2s;
+}
+
+.warn-delete h1{
+    color: var(--error);
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.warn-delete h2{
+    font-size: 1.2em;
+}

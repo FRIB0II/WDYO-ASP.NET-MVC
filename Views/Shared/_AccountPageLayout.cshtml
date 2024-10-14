@@ -6,17 +6,17 @@
 </head>
 <body>
     <header>
-        <div class="content">
-            <nav>
-                <div class="title">
-                    <img src="~/images/icons/account_circle_black.svg" alt="Alternate Text" />
-                    <h1>Minha conta</h1>
-                </div>
-                <ul>
-                    <li><a href="#"><img src="~/images/icons/edit.svg" alt="Alternate Text" /></a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <div class="title">
+                <img src="~/images/icons/account_circle_black.svg" alt="Alternate Text" />
+                <h1>Minha conta</h1>
+            </div>
+
+            <ul>
+                <li><a asp-controller="Home" asp-action="Index">Inicio</a></li>
+                <li><a asp-controller="Devices" asp-action="Index">Dispositivos</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section class="main">
