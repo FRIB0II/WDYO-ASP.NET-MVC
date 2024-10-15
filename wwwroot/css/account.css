@@ -36,12 +36,17 @@ header {
     height: 150px;
 }
 
-.title{
+.title {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content:space-between;
-    align-content: center;
+}
+
+.title img {
+    margin-right: 10px;
+}
+
+.title h1 {
+    margin: 0;
 }
 
 .info{
@@ -58,23 +63,22 @@ header {
 }
 
 nav {
-    height: 125px;
-    width: 100%;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-around;
+    background-color: #007B8F;
+    padding: 10px;
 }
 
-nav ul {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: row;
-}
-
-nav ul li {
+.nav-links {
     list-style: none;
-    font-size: 18px;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0;
 }
 
 nav ul li a {
@@ -86,10 +90,6 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #5d3d17a7;
-}
-
-.title{
-    width: 100%;
 }
 
 .account-info{
