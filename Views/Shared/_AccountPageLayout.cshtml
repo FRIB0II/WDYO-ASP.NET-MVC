@@ -3,18 +3,20 @@
 <head>
     <title></title>
     <link href="~/css/account.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
 </head>
 <body>
     <header>
         <nav>
             <div class="title">
                 <img src="~/images/icons/account_circle_black.svg" alt="Alternate Text" />
-                <h1>Minha conta</h1>
+                <h1><a asp-controller="account" asp-action="Index" style="color: black; text-decoration: none;">Minha conta</a></h1>
             </div>
 
             <ul class="nav-links">
                 <li><a asp-controller="Home" asp-action="Index">Inicio</a></li>
-                <li><a asp-controller="Devices" asp-action="Index">Dispositivos</a></li>
+                <li><a asp-controller="Account" asp-action="Index">Conta</a></li>
+                <li><a asp-controller="Device" asp-action="Index">Dispositivos</a></li>
             </ul>
         </nav>
     </header>
@@ -23,5 +25,11 @@
         @RenderBody()
     </section>
 
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+    <script src="~/js/DataTableConfig.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

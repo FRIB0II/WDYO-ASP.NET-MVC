@@ -1,0 +1,47 @@
+﻿@using WhatDoYouOwn_ASPNET.Models
+@model List<DeviceModel>
+@{
+    Layout = "_AccountPageLayout";
+}
+
+
+<div class="content">
+
+    @if (TempData != null)
+    {
+        <div>
+            <span>@TempData["SuccesMessage"]</span>
+            <span>@TempData["ErrorMessage"]</span>
+        </div>
+    }
+
+    <table class="table" id="table-device">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">HostName</th>
+                <th scope="col">Ipv4</th>
+                <th scope="col">Ultimo Usuario</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (DeviceModel device in Model)
+                {
+                    <tr>
+                        <th scope="row">@device.IdComputador</th>
+                        <td>@device.HostName</td>
+                        <td>@device.Ipv4</td>
+                        <td>@device.UltimoUsuario</td>
+                        <td>
+                            <a role="button" class="a-btn" asp-route-id="@device.IdComputador" asp-controller="Contact" asp-action="DeleteConfirm">Apagar</a>
+                        </td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+</div>

@@ -10,5 +10,6 @@ namespace WhatDoYouOwn_ASPNET
         }
 
         public DbSet<UserModel> Usuario { get; set; }
+        public DbSet<DeviceModel> Computador { get; set; }
     }
 }

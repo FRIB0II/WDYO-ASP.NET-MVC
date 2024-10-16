@@ -25,6 +25,7 @@ namespace WhatDoYouOwn_ASPNET
             // Injeção de depedência.
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IUserSession, UserSession>();
+            builder.Services.AddScoped<IDeviceRepository, DeviceRepository>();
             builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             builder.Services.AddSession(o =>
             {

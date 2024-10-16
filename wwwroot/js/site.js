@@ -4,13 +4,13 @@ const closeBtn = document.getElementById('close-btn');
 const mainContent = document.getElementById('mainContent');
 
 // Função para abrir a sidebar
-toggleBtn.onclick = function() {
+toggleBtn.onclick = function () {
     sidebar.classList.toggle('open'); // Alterna a classe 'open'
     mainContent.classList.toggle('shift'); // Move o conteúdo principal
 }
 
 // Função para fechar a sidebar
-closeBtn.onclick = function() {
+closeBtn.onclick = function () {
     sidebar.classList.remove('open');
     mainContent.classList.remove('shift');
 }

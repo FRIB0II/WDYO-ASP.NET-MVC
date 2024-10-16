@@ -27,6 +27,7 @@ namespace WhatDoYouOwn_ASPNET.Controllers
             {
                 return View(model);
             }
+        
             return RedirectToAction("Index", "SingUp");
         }
 
